@@ -1,7 +1,12 @@
 body
 {
-    background: #193038;
+    background: #1e1a1f;
     text-align: center;
+}
+
+#maincontainer
+{
+    margin-left: 200px; /*Same as the width of the sidebar */
 }
 
 #main
@@ -9,8 +14,9 @@ body
     width: 1000px;
     height: 600px;
     /* background: #14ca60; */
-    margin-left: 200px; /* Same as the width of the sidebar */
-    border: solid 2px #F4A261;
+    
+    margin: auto;
+    /* border: solid 2px #E85A4F; */
     padding: 10px;
 }
 
@@ -24,7 +30,7 @@ body
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    border-right: solid 2px #F4A261;
+    border-right: solid 2px #E85A4F;
     overflow-x: hidden; /* Disable horizontal scroll */
 }
 /* The navigation menu links */
@@ -33,20 +39,7 @@ body
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
     display: block;
-}
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover 
-{
-    color: #f1f1f1;
-}
-.sidenav div
-{
-    position: absolute;
-    /* top: 50%; */
-    margin:0 auto;
-    border: solid 2px #F4A261;
 }
   
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
@@ -60,32 +53,36 @@ h1
 {
     text-align: center;
     font-family: 'Times New Roman';
-    font: 24pt;
-    color: #2A9D8F;
+    font-size: 72pt;
+    color: #EDF5E1;
 }
 
 hr
 {
-    height: 2px;
-    color: #F4A261;
+    /* height: 2px; */
+    color: #E85A4F;
 }
 
 p
 {
     font-family: "Calibri";
-    font-size: 12pt;
+    font-size: 16pt;
     text-align: left;
     text-indent: 48px;
-    color: #2A9D8F;
+    color: #EDF5E1;
 }
 
 a:link
 {
-    color: #F4A261;
+    color: #E98074;
 }
 a:visited
 {
-    color: #E76F51;
+    color: #E98074;
+}
+a:hover
+{
+    color: #fca690;
 }
 
 img
