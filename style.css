@@ -6,18 +6,29 @@ body
 
 #maincontainer
 {
+    animation: transitionIn 1.25s;
     margin-left: 200px; /*Same as the width of the sidebar */
 }
 
 #main
 {
-    width: 1000px;
-    height: 600px;
+    /* width: 1000px; */
+    width: 75vw;
+    /* height: 600px; */
     /* background: #14ca60; */
     
     margin: auto;
     /* border: solid 2px #E85A4F; */
     padding: 10px;
+}
+
+#center-screen
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
 }
 
 /* The sidebar menu */
@@ -53,7 +64,8 @@ h1
 {
     text-align: center;
     font-family: 'Times New Roman';
-    font-size: 72pt;
+    /* font-size: 72pt; */
+    font-size: 6.5vw;
     color: #EDF5E1;
 }
 
@@ -92,8 +104,8 @@ img
     object-fit: contain;
 }
 
- /* Style the button that is used to open and close the collapsible content */
- .collapsible {
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
     background-color: #1e1a1f;
     color: #EDF5E1;
     cursor: pointer;
@@ -105,15 +117,15 @@ img
     outline: none;
     font-family: "Calibri";
     font-size: 16px;
-  }
+}
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  /* .active, .collapsible:hover {
-    background-color: #ccc;
-  } */
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/* .active, .collapsible:hover {
+background-color: #ccc;
+} */
   
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
+/* Style the collapsible content. Note: hidden by default */
+.content {
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
@@ -122,4 +134,19 @@ img
     border-top: none;
     background-color: #1e1a1f;
     margin-bottom: 10px;
-  } 
+}
+
+@keyframes transitionIn
+{
+    from
+    {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to
+    {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
