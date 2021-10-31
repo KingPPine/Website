@@ -2,6 +2,7 @@
 
     <head>
         <title>Discord Bot</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter|Poppins">
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="icon" href="favicon.ico">
     </head>
@@ -22,9 +23,18 @@
 
         <div id="mainContainer">
             <div id="main">
-                <h1>Discord Bot</h1>
+                <h1><img src="Discord logo.png" alt="" style="width:6.5vw;height:6.5vw; position: relative; right: 10px; top: 20px;">
+                Discord Bot.</h1>
                 <hr>
-                <p>Description on Discord Bot</p>
+                <p>Stemmed from wanting to launch and shut down the Medium EC2 instance remotely to save money</p>
+                <p>Decided to learn Python for this project</p>
+                <p>Installed VS Code & extensions</p>
+                <p>imported discord API to create bot</p>
+                <p>imported boto3 to connect to my AWS instances and retrieve Cloudwatch metric</p>
+                <p>imported json package to parse data</p>
+                <p>Discord bot is scanning messages to start and stop the server</p>
+                <p>Pulling Cloudwatch metrics every 5 minutes to shut the server down if there is no activity for 30 mins</p>
+                <p>imported SQLite3 to keep a database of member activity, and display it</p>
 
                 <button type="button" class="collapsible">Open Collapsible</button>
                 <div class="content">

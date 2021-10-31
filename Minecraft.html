@@ -2,40 +2,53 @@
 
     <head>
         <title>Minecraft</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter|Poppins">
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="icon" href="favicon.ico">
     </head>
     
     <body>
-        <!-- Side navigation -->
-        <div class="sidenav">
-            <a href="index.html" target="_self">Home</a>
-            <hr style="margin: 10px;">
-            <div style="margin-top: 50px;"></div>
-            <a href="Minecraft.html" target="_self">Minecraft Server (AWS)</a>
-            <p></p>
-            <a href="Discord-Bot.html" target="_self">Discord Bot (Python, AWS, SQL)</a>
-            <p></p>
-            <a href="This-Website.html" target="_self">This Website (HTML, CSS, JavaScript, Git)</a>
-            <div style="margin-top: 50px;"></div>
-        </div>
+        <div >
+            <!-- Side navigation -->
+            <div class="sidenav">
+                <a href="index.html" target="_self">Home</a>
+                <hr style="margin: 10px;">
+                <div style="margin-top: 50px;"></div>
+                <a href="Minecraft.html" target="_self">Minecraft Server (AWS)</a>
+                <p></p>
+                <a href="Discord-Bot.html" target="_self">Discord Bot (Python, AWS, SQL)</a>
+                <p></p>
+                <a href="This-Website.html" target="_self">This Website (HTML, CSS, JavaScript, Git)</a>
+                <div style="margin-top: 50px;"></div>
+            </div>
 
-        <div id="mainContainer">
-            <div id="main">
-                <h1>Minecraft server</h1>
-                <hr>
-                <p>Description on Minecraft</p>
+            <div id="mainContainer">
+                <div id="main">
+                    <h1><img src="minecraft-logo.png" alt="" style="width:6.5vw;height:6.5vw; position: relative; right: 10px; top: 20px;">
+                    Minecraft server.</h1>
+                    <hr>
+                    <p>Goal was to have a Minecraft Server <br> for me and Matt to play 24/7</p>
+                    <p>Started renting an Amazon EC2 Medium instance</p>
+                    <p>Downloaded a key and SSH'd into the server</p>
+                    <p>Sudo chmod to grant appropriate permissions</p>
+                    <p>sudo yum install to install & update java, along with other modules</p>
+                    <p>Added a script in the startup folder to boot minecraft automatically on server start<br>
+                    This is in var/lib/cloud/scripts/per-boot/</p>
+                    <p>Set up weekly backups for the instance</p>
+                    <p>Costs would be $30 a month, so I set up a free micro EC2 instance to launch / shut it down.<br>
+                    See Discord Bot page</p>
 
-                <button type="button" class="collapsible">Open Collapsible</button>
-                <div class="content">
-                    <p>lorem ipsum...</p>
+                    <button type="button" class="collapsible">Open Collapsible</button>
+                    <div class="content">
+                        <p>lorem ipsum...</p>
+                    </div>
+                    <button type="button" class="collapsible">Open Collapsible</button>
+                    <div class="content">
+                        <img src="AndrewGasm.jpg" alt="a sexy gentleman">
+                    </div>
+
+                    <script src="collapsible.js"></script>
                 </div>
-                <button type="button" class="collapsible">Open Collapsible</button>
-                <div class="content">
-                    <img src="AndrewGasm.jpg" alt="a sexy gentleman">
-                </div>
-
-                <script src="collapsible.js"></script>
             </div>
         </div>
     </body>
