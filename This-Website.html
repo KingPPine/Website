@@ -26,21 +26,25 @@
                 <h1><img src="favicon.ico" alt="" style="width:6.5vw;height:6.5vw; position: relative; right: 10px; top: 20px; image-rendering: pixelated;">
                 This Website.</h1>
                 <hr>
-                <p>Wanted to have a portfolio of my efforts. Hi Scott.</p>
-                <p>Built fully from scratch using HTML and CSS</p>
-                <p>added javascript for the collapsible boxes</p>
-                <p>Added Favicon & google fonts</p>
-                <p>Installed snapd on the free EC2 instance so that I could leverage certbot and certify my website (show secure icon). Set this up to auto-renew</p>
-                <p>Established a redirect in httpd.conf to ensure https is being used</p>
-                <p>Set up a Github repository to easily modify the site locally, then push & pull from the server</p>
+                <p>After exploring side projects for my own education, I wanted to have a portfolio of my efforts.
+                I chose to stay away from any libraries in this case, as I felt it would prevent me from properly learning HTML, CSS, and Javascript.<br>
+                This site is hosted on my AWS micro instance along with the Discord bot. Feel free to <a href="https://github.com/KingPPine/Website" target="_blank">click here</a> to see the full code on GitHub.</p>
 
+                <p>The majority of the contents on this site are made in HTML and CSS. However, here's a cool expandable box done in Javascript:</p>
                 <button type="button" class="collapsible">Open Collapsible</button>
                 <div class="content">
-                    <p>lorem ipsum...</p>
-                </div>
-                <button type="button" class="collapsible">Open Collapsible</button>
-                <div class="content">
-                    <img src="AndrewGasm.jpg" alt="a sexy gentleman">
+                    <p>Pretty cool, right? Sorry, moving on.<br>
+                    I also leverage Google Fonts on this site, and added a Favicon. The last thing that bothered me was the fact that the site wasn't secure.
+                    I feel as though security is an important part of setting up a site, and did some more research online. I ended up finding out about "certbot", 
+                    which would help automatically certify my site, and allow for auto-renewal options.</p>
+
+                    <p> Things got a little tricky here, as the documentation was not geared towards AWS and I had to make a few attempts before finding success.<br>
+                    In the end, I installed the <a href="https://github.com/albuild/snap" target="_blank">snapd package</a> on my instance 
+                    so that I could leverage the <a href="https://certbot.eff.org/lets-encrypt/snap-apache" target="_blank">snapd / Apache guide</a> from Certbot.
+                    I set up the service to auto-renew periodically to remove yearly manual upkeep.
+                    Finally, I established a 
+                    <a href="https://stackoverflow.com/questions/16200501/how-to-automatically-redirect-http-to-https-on-apache-servers" target="_blank">redirect in httpd.conf</a> 
+                    (under /etc/httpd/conf/) to ensure the https version of the site is being used at all times.</p>
                 </div>
 
                 <script src="collapsible.js"></script>

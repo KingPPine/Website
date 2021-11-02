@@ -27,25 +27,34 @@
                     <h1><img src="minecraft-logo.png" alt="" style="width:6.5vw;height:6.5vw; position: relative; right: 10px; top: 20px;">
                     Minecraft server.</h1>
                     <hr>
-                    <p>Goal was to have a Minecraft Server <br> for me and Matt to play 24/7</p>
-                    <p>Started renting an Amazon EC2 Medium instance</p>
-                    <p>Downloaded a key and SSH'd into the server</p>
-                    <p>Sudo chmod to grant appropriate permissions</p>
-                    <p>sudo yum install to install & update java, along with other modules</p>
-                    <p>Added a script in the startup folder to boot minecraft automatically on server start<br>
-                    This is in var/lib/cloud/scripts/per-boot/</p>
-                    <p>Set up weekly backups for the instance</p>
-                    <p>Costs would be $30 a month, so I set up a free micro EC2 instance to launch / shut it down.<br>
-                    See Discord Bot page</p>
+                    <p>This stemmed from wanting to have a Minecraft Server for my friend and I to play 24/7<br>
+                    Searching online for options, I found a lot of services that did this for a reasonable rental fee.
+                    However, I was looking to keep complete control over the performance of the server as well as drive costs even further down if possible.</p>
 
-                    <button type="button" class="collapsible">Open Collapsible</button>
-                    <div class="content">
-                        <p>lorem ipsum...</p>
-                    </div>
-                    <button type="button" class="collapsible">Open Collapsible</button>
-                    <div class="content">
-                        <img src="AndrewGasm.jpg" alt="a sexy gentleman">
-                    </div>
+                    <p>I ended up settling on Amazon EC2 instances, as the architecture is barebones (forcing me to use linux in a shell interface) 
+                        but the Amazon tools around it provide many options.<br>
+                    I started by creating a Medium Instance (4GB of RAM and 2 virtual CPUs), downloading the key locally and SSH'ing into the server.<br>
+                    I had to get comfortable with chmod to grant the right permissions (or simply use sudo before a command) as well as <br>
+                    <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-software.html" target="_blank">"yum" which is the Amazon package manager</a> 
+                    (why you gotta be different, Amazon??).</p>
+
+                    <p>For installing the latest Java package, I downloaded the .rpm file from Oracle. To make file transfer more efficient going forward, 
+                    I downloaded WinSCP and set up the session profile. I moved the rmp over to the server with WinSCP and installed it with sudo yum install.<br>
+                    Similarly, I downloaded and moved the Minecraft server file over to a newly created directory and successfully ran it for the first time</p>
+                    
+                    <p>However, at this point I would theretically need to have my shell session open 24/7 to keep the server running, 
+                    and at $0.05 an hour that meant I would pay overy $35 a month for this. I was also the only one with the access to start / stop the instance, which defeated the purpose. 
+                    My solution was to write a Discord Bot (<a href="Discord-Bot.html" target="_self">Here's my page on that</a>) to allow any user in my group to start / stop this server, 
+                    as well shut down the server after 30 minutes of inactivity (leveraging Amazon's Cloudwatch metrics).</p>
+
+                    <p>I started by adding a script in the instance's <a href="https://stackoverflow.com/questions/43056007/ec2-run-scripts-every-boot" target="_blank">startup folder</a> to boot the minecraft server automatically once the instance was started.<br>
+                    This is in var/lib/cloud/scripts/per-boot/, and the script simply "CD's" to the correct Directory, and runs the java server file as root.</p>
+                    <p>I also took the time to set up weekly backups for the instance, just for safety.</p>
+                    <p>Considering we play 5-10 hours per week at most, this was able to successfully reduce the costs from $35 to under $5 a month 
+                    which is cheaper and more reliable than other services offered online.<br>
+                    Please see the Discord Bot page for more information on how accomplished this last part.</p>
+
+                    <p>Thank you!</p>
 
                     <script src="collapsible.js"></script>
                 </div>

@@ -26,24 +26,35 @@
                 <h1><img src="Discord logo.png" alt="" style="width:6.5vw;height:6.5vw; position: relative; right: 10px; top: 20px;">
                 Discord Bot.</h1>
                 <hr>
-                <p>Stemmed from wanting to launch and shut down the Medium EC2 instance remotely to save money</p>
-                <p>Decided to learn Python for this project</p>
-                <p>Installed VS Code & extensions</p>
-                <p>imported discord API to create bot</p>
-                <p>imported boto3 to connect to my AWS instances and retrieve Cloudwatch metric</p>
-                <p>imported json package to parse data</p>
-                <p>Discord bot is scanning messages to start and stop the server</p>
-                <p>Pulling Cloudwatch metrics every 5 minutes to shut the server down if there is no activity for 30 mins</p>
-                <p>imported SQLite3 to keep a database of member activity, and display it</p>
+                <p>The original goal of this bot was to allow myself and my friends to launch and shut down the Medium EC2 instance remotely 
+                to allow us to play the same Minecraft world 24/7 while staying cost effective.<br>
+                I decided to program this bot in Python since I had never used this language before and I was interested in learning it (prior experience in Java & C#)</p>
 
-                <button type="button" class="collapsible">Open Collapsible</button>
-                <div class="content">
-                    <p>lorem ipsum...</p>
-                </div>
-                <button type="button" class="collapsible">Open Collapsible</button>
-                <div class="content">
-                    <img src="AndrewGasm.jpg" alt="a sexy gentleman">
-                </div>
+                <p>My first step was to install VS Code along with a Python extension. 
+                I've seen a steady rise in popularity with VS Code and thought it might be interesting to give it a try.
+                In hindsight, I'm very happy I did as I find it approachable and easily customizable, with loads of extensions. 
+                I was already comfortable with Visual Studio, but VS Code felt even more user friendly.</p>
+
+                <p>I started by importing 2 packages for this bot: 
+                <a href="https://discordpy.readthedocs.io/en/stable/api.html" target="_blank">the discord package</a>, and 
+                <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#client" target="_blank">boto3</a>.<br>
+                Boto3 is a package I found that leverages the AWS API, and is well documented. The Boto project started as a customer-contributed library, but is now the official AWS SDK.<br>
+                Finally, I installed the json package to be able to read metrics returned by Cloudwatch.</p>
+
+                <p>The Discord API made it easy to read incoming messages from a server and react appropriately.
+                For example, "!StartServer" triggers the launch of my Medium EC2 instance, and "!StopServer" shuts it down.<br>
+                It also runs a function on loop every 5 minutes which captures the "NetworkOut" metric from AWS Cloudwatch, and shuts the server down if it's been inactive for 30 minutes.<br>
+                For the full bot code, <a href="https://github.com/KingPPine/DiscordBot/blob/master/my_bot.py" target="_blank">here's a link to the github page.</a></p>
+
+                <p>At this point, all that was left was storing this bot on a public server that could run 24/7... and what better than another EC2 instance??<br>
+                Back in AWS, I launched a secondary EC2 instance under the "micro" tier which is free for a full year. I wrote a simple 
+                <a href ="https://github.com/KingPPine/DiscordBot/blob/master/nrun.sh" target="_blank">nohup script</a> to launch this bot in the background.
+                This allows me to start the bot and leave it running in the background if I close the shell session. 
+                To kill the bot, I use "ps aux | grep python" to find the correct process, then use "kill (process id)".
+                This is now a cost-efficient solution which allows anyone in my Discord server to launch our Minecraft server any time they please.</p>
+
+                <p>As an additional challenge, I installed the SQLite3 package to keep a database of member activity, and display it.
+                Leveraging the Discord API, I keep track of any games played we play, and display the time played when requested.</p>
 
                 <script src="collapsible.js"></script>
             </div>
