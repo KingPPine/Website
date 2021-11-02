@@ -33,18 +33,21 @@
                 <p>The majority of the contents on this site are made in HTML and CSS. However, here's a cool expandable box done in Javascript:</p>
                 <button type="button" class="collapsible">Open Collapsible</button>
                 <div class="content">
-                    <p>Pretty cool, right? Sorry, moving on.<br>
-                    I also leverage Google Fonts on this site, and added a Favicon. The last thing that bothered me was the fact that the site wasn't secure.
+                    <p>Pretty cool, right? &#129299<br>
+                    I also leveraged Google Fonts, and added a Favicon. The last thing that bothered me was the fact that the site wasn't secure.
                     I feel as though security is an important part of setting up a site, and did some more research online. I ended up finding out about "certbot", 
-                    which would help automatically certify my site, and allow for auto-renewal options.</p>
+                    which would help automatically certify my site, and allow for auto-renewal options.
+                    </p>
+                    <hr>
 
-                    <p> Things got a little tricky here, as the documentation was not geared towards AWS and I had to make a few attempts before finding success.<br>
+                    <p><img src="httpd conf screenshot.png" align="right">Things got a little tricky here, as the documentation was not geared towards AWS and I had to make a few attempts before finding success.<br>
                     In the end, I installed the <a href="https://github.com/albuild/snap" target="_blank">snapd package</a> on my instance 
                     so that I could leverage the <a href="https://certbot.eff.org/lets-encrypt/snap-apache" target="_blank">snapd / Apache guide</a> from Certbot.
                     I set up the service to auto-renew periodically to remove yearly manual upkeep.
                     Finally, I established a 
                     <a href="https://stackoverflow.com/questions/16200501/how-to-automatically-redirect-http-to-https-on-apache-servers" target="_blank">redirect in httpd.conf</a> 
-                    (under /etc/httpd/conf/) to ensure the https version of the site is being used at all times.</p>
+                    (under /etc/httpd/conf/) to ensure the https version of the site is being used at all times.
+                    </p>
                 </div>
 
                 <script src="collapsible.js"></script>
