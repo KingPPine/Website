@@ -57,8 +57,15 @@ body
 {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
+    font-family: 'Inter';
     font-size: 25px;
     display: block;
+}
+/* The Home link in the top right*/
+.sidenav .home
+{
+    font-size: 40px;
+    font-weight: bold;
 }
   
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
@@ -83,6 +90,14 @@ hr
 }
 
 p
+{
+    font-family: "Poppins";
+    font-size: 16pt;
+    text-align: left;
+    /* text-indent: 48px; */
+    color: #EDF5E1;
+}
+li
 {
     font-family: "Poppins";
     font-size: 16pt;

@@ -5,27 +5,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter|Poppins">
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="icon" href="favicon.ico">
+        <script src="sidenav.js" type="text/javascript" defer></script>
     </head>
     
     <body>
         <div >
-            <!-- Side navigation -->
-            <div class="sidenav">
-                <a href="index.html" target="_self">Home</a>
-                <hr style="margin: 10px;">
-                <div style="margin-top: 50px;"></div>
-                <a href="Minecraft.html" target="_self">Minecraft Server (AWS)</a>
-                <p></p>
-                <a href="Discord-Bot.html" target="_self">Discord Bot (Python, AWS, SQL)</a>
-                <p></p>
-                <a href="This-Website.html" target="_self">This Website (HTML, CSS, JavaScript, Git)</a>
-                <p></p>
-                <a href="Certifications.html" target="_self">Certifications</a>
-                <!--<p></p>
-                <a href="Spring-Boot.html" target="_self">Spring Boot (Java)</a>  -->
-                <div style="margin-top: 50px;"></div>
-            </div>
-
             <div id="mainContainer">
                 <div id="main">
                     <h1><img src="spring-boot-logo.png" alt="" style="width:6.5vw;height:6.5vw; position: relative; right: 10px; top: 20px;">
@@ -36,6 +20,9 @@
                     <script src="collapsible.js"></script>
                 </div>
             </div>
+
+            <!-- Side navigation -->
+            <sidenav-component/>
         </div>
     </body>
 </html>
