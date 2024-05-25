@@ -30,3 +30,7 @@ jobs:
               --exclude '.gitignore'
               --exclude 'VSCode Projects.code-workspace'
               --delete
+      - name: Invalidate cache for zacharygranger.ca Cloudfront distibution
+        run: aws cloudfront create-invalidation --distribution-id E2A8KUQXU9I05H --paths '/*'
+      - name: Invalidate cache for www.zacharygranger.ca Cloudfront distibution
+        run: aws cloudfront create-invalidation --distribution-id E3DV9S4HY2FFDJ --paths '/*'
