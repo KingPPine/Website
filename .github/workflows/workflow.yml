@@ -16,8 +16,15 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
-      - name: Copy to S3
+      - name: Copy to zacharygranger.ca S3
         run: aws s3 sync ./. s3://zacharygranger.ca
+              --exclude '.github/*'
+              --exclude '.git/*'
+              --exclude '.gitignore'
+              --exclude 'VSCode Projects.code-workspace'
+              --delete
+      - name: Copy to www.zacharygranger.ca S3
+        run: aws s3 sync ./. s3://www.zacharygranger.ca
               --exclude '.github/*'
               --exclude '.git/*'
               --exclude '.gitignore'
