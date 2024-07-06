@@ -8,7 +8,7 @@ for (i = 0; i < coll.length; i++) {
     //console.log(content.style.maxHeight); <- used this to better understand why the if condition was not ""== 0"
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
-      this.innerHTML = "Open Collapsible";
+      this.innerHTML = this.dataset.placeholder ? this.dataset.placeholder : 'Open Collapsible';
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
       this.innerHTML = "Close Collapsible";

@@ -81,6 +81,10 @@ h1
     font-family: 'Inter';
     font-size: 6.5vw;
     color: #EDF5E1;
+    text-shadow: none;
+    transition-property: text-shadow, transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
 }
 h2
 {
