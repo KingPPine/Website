@@ -58,7 +58,7 @@
                         <ul>
                             <li>For performance reasons, it's important to pass the character data in chunks as opposed to calling the shader on each individual character</li>
                             <li>Different graphics cards have different buffer size limits. 
-                                It took me a long time to realize that my text wasn't drawing because I needed to pass smaller chuynks of data to my shaders</li>
+                                It took me a long time to realize that my text wasn't drawing because I needed to pass smaller chunks of data to my shaders</li>
                             <li>Not all fonts behave nicely with Freetype / OpenGL, causing some characters to be invisible. 
                                 I used FontForge to edit some of the character data and have them display correctly.</li>
                             <li>OpenGL depth testing needs to be enabled for 3D rendering, but disabled for 2D rendering. This is what fixed the issue in the picture above.</li>
