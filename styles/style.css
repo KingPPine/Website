@@ -26,19 +26,28 @@ body
     min-height: 70vh;
 }
 
-#wiggle-section
-{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 75vw;
-}
-
 #background-image
 {
     background-image: url('Minecraft background.png');  
     background-repeat: no-repeat; 
     background-size: 100%;
+}
+
+#resume
+{
+    margin: auto;
+    width: 80%;
+    font-family: "Poppins";
+    font-size: 12pt;
+    text-align: left;
+    /* text-indent: 48px; */
+    color: #EDF5E1;
+}
+#resume li{
+    font-size: 12pt;
+}
+#resume ul{
+    padding-bottom: 10px;
 }
 
 /* The sidebar menu */
@@ -108,7 +117,16 @@ body
     right: 0;
     bottom: 0;
     height: 50%;
-  }
+}
+.column{
+    float: left;
+    width: 33.33%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
   
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) 
